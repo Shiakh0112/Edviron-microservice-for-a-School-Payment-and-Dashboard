@@ -8,17 +8,10 @@ const paymentRoutes = require("./routes/paymentRoutes");
 const webhookRoutes = require("./routes/webhookRoutes");
 
 const app = express();
-const allowedOrigins = [process.env.FRONTEND_URL, process.env.FRONTEND_DEV];
-
 app.use(
   cors({
-    origin: function (origin, callback) {
-      if (!origin) return callback(null, true); // Postman / server-to-server
-      if (!allowedOrigins.includes(origin)) {
-        return callback(new Error("Not allowed by CORS"), false);
-      }
-      return callback(null, true);
-    },
+    origin: "https://edviron-assignment-microservice-for-a-uk3w.onrender.com",
+    origin: ["https://edviron-assignment-microservice.onrender.com"],
     credentials: true,
   })
 );
