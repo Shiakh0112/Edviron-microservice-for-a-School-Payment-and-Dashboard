@@ -8,13 +8,12 @@ const paymentRoutes = require("./routes/paymentRoutes");
 const webhookRoutes = require("./routes/webhookRoutes");
 
 const app = express();
-
 const allowedOrigins = [process.env.FRONTEND_URL, process.env.FRONTEND_DEV];
 
 app.use(
   cors({
     origin: function (origin, callback) {
-      if (!origin) return callback(null, true); // allow Postman or server-to-server
+      if (!origin) return callback(null, true); // Postman / server-to-server
       if (!allowedOrigins.includes(origin)) {
         return callback(new Error("Not allowed by CORS"), false);
       }

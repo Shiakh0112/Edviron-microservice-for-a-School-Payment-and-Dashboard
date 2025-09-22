@@ -1,5 +1,5 @@
 export const API_BASE_URL =
-  "https://edviron-microservice-for-a-school.onrender.com//api";
+  "https://edviron-microservice-for-a-school.onrender.com/api";
 
 export const PAYMENT_STATUS = {
   SUCCESS: "SUCCESS",
