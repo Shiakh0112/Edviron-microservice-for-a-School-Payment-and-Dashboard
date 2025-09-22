@@ -8,14 +8,17 @@ const paymentRoutes = require("./routes/paymentRoutes");
 const webhookRoutes = require("./routes/webhookRoutes");
 
 const app = express();
+
 app.use(
   cors({
     origin: "https://edviron-microservice-for-a-school.onrender.com",
-    origin: ["https://edviron-microservice-for-a-school-p-nu.vercel.app/"],
+    origin: [
+      "https://edviron-microservice-for-a-school-p-nu.vercel.app",
+      "https://edviron-microservice-for-a-school.onrender.com",
+    ],
     credentials: true,
   })
 );
-
 app.use(express.json());
 app.use(morgan("dev"));
 
