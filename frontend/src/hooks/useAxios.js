@@ -8,7 +8,9 @@ const useAxios = () => {
   const [error, setError] = useState(null);
 
   const axiosInstance = axios.create({
-    baseURL: API_BASE_URL || "http://localhost:5000/api",
+    baseURL:
+      API_BASE_URL ||
+      "https://edviron-microservice-for-a-school.onrender.com/api",
   });
 
   // Add token to requests
